@@ -8,26 +8,8 @@ class OnBoardingPage extends StatelessWidget{
     // TODO: implement build
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            const Spacer(),
-            Image.asset(
-              "assets/images/bugs.png",
-              height: 250,
-            ),
-            const Spacer(),
-            Text(
-              "Onboarding now begins",
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(height: 25,),
-
-            Text("Getting started...",
-            textAlign: TextAlign.center,
-            ),
-            const Spacer(),
-          ],
+        child: OnboardContent(
+          image: 'assets/images/bugs.png', description: 'Firing Up...', title: 'Onboarding...',
         ),
       ),
     );
@@ -35,4 +17,36 @@ class OnBoardingPage extends StatelessWidget{
   
   
   
+}
+
+class OnboardContent extends StatelessWidget {
+  const OnboardContent({
+    super.key, required this.image, required this.title, required this.description
+  });
+  final String image, title, description;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const Spacer(),
+        Image.asset(
+          image,
+          height: 250,
+        ),
+        const Spacer(),
+        Text(
+          title,
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.w500),
+        ),
+        const SizedBox(height: 25,),
+
+        Text(description,
+        textAlign: TextAlign.center,
+        ),
+        const Spacer(),
+      ],
+    );
+  }
 }
