@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login_screen.dart';
+
 class OnBoardingPage extends StatelessWidget{
   const OnBoardingPage({Key? key}) : super(key: key);
 
@@ -46,6 +48,11 @@ class OnboardContent extends StatelessWidget {
         textAlign: TextAlign.center,
         ),
         const Spacer(),
+
+        TextButton(onPressed: (){
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginPage(),));
+        },
+         child: Text('Next', textAlign: TextAlign.center,))
       ],
     );
   }

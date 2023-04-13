@@ -1,6 +1,7 @@
 import 'package:test_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/screens/onboarding_screen.dart';
+import 'package:test_app/screens/splash_screen.dart';
 
 
 void main() {
@@ -14,7 +15,7 @@ class LoginApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: OnBoardingPage()
+        home: SplashScreen()
     );
   }
 }
