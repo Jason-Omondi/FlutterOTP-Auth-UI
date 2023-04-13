@@ -23,7 +23,7 @@ class OnBoardingPage extends StatelessWidget {
             PageViewModel(
               title: 'Simple UI Onboarding',
               body: 'Just for enhanced app experience',
-              image: buildImage('assets/images/rr.png'),
+              image: buildImage('assets/images/rr_.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
@@ -37,12 +37,15 @@ class OnBoardingPage extends StatelessWidget {
               decoration: getPageDecoration(),
             ),
           ],
-          done: Text('Read', style: TextStyle(fontWeight: FontWeight.w600)),
+          done: Text('Read', style: TextStyle(fontWeight: FontWeight.w600, color: Colors.black54)),
           onDone: () => goToHome(context),
           showSkipButton: true,
-          skip: Text('Skip'),
+          skip: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text('Skip', textAlign: TextAlign.center, style: TextStyle(color: Colors.black,),),
+          ),
           onSkip: () => LoginPage(),
-          next: Icon(Icons.arrow_forward),
+          next: Icon(Icons.arrow_forward, color: Colors.yellow,),
           dotsDecorator: getDotDecoration(),
           onChange: (index) => print('Page $index selected'),
           globalBackgroundColor: Theme.of(context).primaryColor,
