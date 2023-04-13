@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:introduction_screen/introduction_screen.dart';
+import '../components/btn_onboarding.dart';
 import 'login_screen.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -8,30 +10,30 @@ class OnBoardingPage extends StatelessWidget {
           pages: [
             PageViewModel(
               title: 'A reader lives a thousand lives',
-              body: 'The man who never reads lives only one.',
-              image: buildImage('assets/ebook.png'),
+              body: 'In the bleak mid-winter',
+              image: buildImage('assets/images/kovu.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Featured Books',
+              title: 'Here we go',
               body: 'Available right at your fingerprints',
-              image: buildImage('assets/readingbook.png'),
+              image: buildImage('assets/images/wada.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Simple UI',
-              body: 'For enhanced reading experience',
-              image: buildImage('assets/manthumbs.png'),
+              title: 'Simple UI Onboarding',
+              body: 'Just for enhanced app experience',
+              image: buildImage('assets/images/rr.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Today a reader, tomorrow a leader',
-              body: 'Start your journey',
+              title: 'Today a learner, tomorrow a beast',
+              body: 'Starting here',
               footer: ButtonWidget(
-                text: 'Start Reading',
+                text: 'Next steps',
                 onClicked: () => goToHome(context),
               ),
-              image: buildImage('assets/learn.png'),
+              image: buildImage('assets/images/cockpit_1.png'),
               decoration: getPageDecoration(),
             ),
           ],
@@ -39,7 +41,7 @@ class OnBoardingPage extends StatelessWidget {
           onDone: () => goToHome(context),
           showSkipButton: true,
           skip: Text('Skip'),
-          onSkip: () => goToHome(context),
+          onSkip: () => LoginPage(),
           next: Icon(Icons.arrow_forward),
           dotsDecorator: getDotDecoration(),
           onChange: (index) => print('Page $index selected'),
